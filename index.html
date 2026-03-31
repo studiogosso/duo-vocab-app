@@ -18,132 +18,152 @@
 html,body{height:100%;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
 a{color:var(--accent);text-decoration:none}
 
-/* Header */
-.header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:12px}
-.header h1{font-size:18px;font-weight:700;flex:1}
-.header h1 span{color:var(--accent);font-size:13px;font-weight:400;margin-left:8px}
-.header-btn{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
-.header-btn:hover{background:var(--card2);border-color:var(--accent)}
-.header-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-
-/* Stats bar */
-.stats-bar{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 14px;min-width:100px;text-align:center;flex-shrink:0}
-.stat-card .num{font-size:22px;font-weight:700;color:var(--accent)}
-.stat-card .label{font-size:11px;color:var(--text2);margin-top:2px}
-
-/* Tabs */
-.tabs{display:flex;padding:0 16px;gap:4px;border-bottom:1px solid var(--border)}
-.tab{padding:10px 16px;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
-.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-
-/* Section nav */
-.section-nav{display:flex;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.section-btn{background:var(--card);border:1px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.2s;flex-shrink:0}
-.section-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.section-btn .progress-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-left:6px}
-.section-btn .progress-dot.mastered{background:var(--green)}
-.section-btn .progress-dot.learning{background:var(--orange)}
-
-/* Content area */
-.content{padding:16px;max-width:800px;margin:0 auto}
-
-/* Sentence card */
-.sentence-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden;transition:.3s}
-.sentence-card.mastered{border-color:var(--green)}
-.sentence-header{display:flex;align-items:center;padding:14px 16px;gap:10px;cursor:pointer}
-.sentence-num{background:var(--accent);color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.sentence-card.mastered .sentence-num{background:var(--green)}
-.sentence-en{font-size:15px;line-height:1.5;flex:1;color:var(--text)}
-.sentence-expand{color:var(--text2);font-size:18px;transition:.3s;flex-shrink:0}
-.sentence-card.open .sentence-expand{transform:rotate(180deg)}
-.sentence-body{display:none;border-top:1px solid var(--border)}
-.sentence-card.open .sentence-body{display:block}
-.sentence-ja{padding:12px 16px;background:rgba(74,158,255,.05);font-size:14px;color:var(--accent);line-height:1.6;border-bottom:1px solid var(--border)}
-
-/* Word list */
-.word-list{padding:8px 0}
-.word-item{padding:10px 16px;border-bottom:1px solid rgba(42,48,80,.5);cursor:pointer;transition:.15s}
-.word-item:last-child{border-bottom:none}
-.word-item:hover{background:rgba(74,158,255,.05)}
-.word-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.word-en{font-size:15px;font-weight:600;color:var(--text)}
-.word-phonetic{font-size:12px;color:var(--text2);font-style:italic}
-.word-pos{font-size:11px;font-weight:700;padding:2px 6px;border-radius:4px;background:var(--accent2);color:#fff}
-.word-meanings{margin-top:6px;font-size:13px;color:var(--text);line-height:1.6}
-.word-related{margin-top:4px;font-size:12px;color:var(--text2);line-height:1.5}
-.word-status{display:flex;gap:6px;margin-top:8px}
-.word-status-btn{font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:.2s}
-.word-status-btn:hover{border-color:var(--accent)}
-.word-status-btn.known{background:var(--green);color:#fff;border-color:var(--green)}
-.word-status-btn.learning{background:var(--orange);color:#fff;border-color:var(--orange)}
-
-/* Flashcard mode */
-.flashcard-container{display:flex;flex-direction:column;align-items:center;gap:20px;padding:20px 0}
-.flashcard{background:var(--card);border:1px solid var(--border);border-radius:16px;width:100%;max-width:500px;min-height:280px;padding:30px 24px;text-align:center;cursor:pointer;transition:.3s;position:relative;perspective:1000px}
-.flashcard:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(74,158,255,.15)}
-.flashcard-num{position:absolute;top:14px;left:18px;font-size:12px;color:var(--text2);font-weight:600}
-.flashcard-section{position:absolute;top:14px;right:18px;font-size:11px;color:var(--accent);font-weight:600}
-.flashcard-en{font-size:20px;line-height:1.6;margin-top:20px;color:var(--text)}
-.flashcard-divider{width:60px;height:2px;background:var(--accent);margin:20px auto;opacity:0;transition:.3s}
-.flashcard.revealed .flashcard-divider{opacity:1}
-.flashcard-ja{font-size:16px;color:var(--accent);line-height:1.6;opacity:0;transform:translateY(10px);transition:.3s}
-.flashcard.revealed .flashcard-ja{opacity:1;transform:translateY(0)}
-.flashcard-words{margin-top:16px;text-align:left;opacity:0;transform:translateY(10px);transition:.3s .1s}
-.flashcard.revealed .flashcard-words{opacity:1;transform:translateY(0)}
-.flashcard-word{display:inline-block;background:var(--card2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;font-size:12px;margin:3px;color:var(--text)}
-.flashcard-hint{font-size:12px;color:var(--text2);margin-top:12px}
-.flashcard.revealed .flashcard-hint{display:none}
-.flashcard-controls{display:flex;gap:12px;width:100%;max-width:500px}
-.flashcard-btn{flex:1;padding:14px;border-radius:10px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
-.flashcard-btn.again{background:var(--red);color:#fff}
-.flashcard-btn.good{background:var(--green);color:#fff}
-.flashcard-btn.easy{background:var(--accent);color:#fff}
-.flashcard-btn:hover{transform:translateY(-1px);filter:brightness(1.1)}
-.flashcard-progress{width:100%;max-width:500px;height:4px;background:var(--card);border-radius:2px;overflow:hidden}
-.flashcard-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));transition:.3s;border-radius:2px}
-
-/* Quiz mode */
-.quiz-container{max-width:600px;margin:0 auto;padding:20px 0}
-.quiz-question{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px;text-align:center}
-.quiz-prompt{font-size:13px;color:var(--text2);margin-bottom:12px}
-.quiz-word{font-size:28px;font-weight:700;color:var(--text);margin-bottom:8px}
-.quiz-context{font-size:14px;color:var(--text2);line-height:1.5;font-style:italic}
-.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.quiz-option{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:16px;font-size:14px;color:var(--text);cursor:pointer;transition:.2s;text-align:center;line-height:1.4}
-.quiz-option:hover{border-color:var(--accent);background:var(--card2)}
-.quiz-option.correct{border-color:var(--green);background:rgba(0,210,160,.1);color:var(--green)}
-.quiz-option.wrong{border-color:var(--red);background:rgba(255,107,107,.1);color:var(--red)}
-.quiz-score{text-align:center;padding:20px;font-size:14px;color:var(--text2)}
-.quiz-score .big{font-size:48px;font-weight:700;color:var(--gold);display:block;margin:10px 0}
-
-/* TTS button */
+.header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;gap:10px}
+.header h1{font-size:17px;font-weight:700;flex:1}
+.header h1 span{color:var(--accent);font-size:12px;font-weight:400;margin-left:6px}
+.hbtn{background:var(--card);border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:8px;font-size:12px;cursor:pointer;transition:.2s}
+.hbtn:hover{background:var(--card2);border-color:var(--accent);color:var(--text)}
 .tts-btn{background:none;border:none;color:var(--accent);cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;transition:.2s;flex-shrink:0}
 .tts-btn:hover{background:rgba(74,158,255,.1)}
 
+/* Streak bar */
+.streak-bar{display:flex;gap:8px;padding:8px 16px;align-items:center;border-bottom:1px solid var(--border)}
+.streak-item{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--text2)}
+.streak-item .v{color:var(--gold);font-weight:700}
+.streak-item .fire{font-size:14px}
+.progress-ring{width:44px;height:44px;flex-shrink:0}
+.progress-ring circle{transition:stroke-dashoffset .5s}
+
+/* Stats */
+.stats-bar{display:flex;gap:6px;padding:8px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:70px;text-align:center;flex-shrink:0}
+.stat-card .num{font-size:18px;font-weight:700;color:var(--accent)}
+.stat-card .label{font-size:10px;color:var(--text2);margin-top:1px}
+
+/* Bottom nav (mobile) */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(10,14,26,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);display:flex;padding:6px 0 max(6px,env(safe-area-inset-bottom))}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;cursor:pointer;color:var(--text2);font-size:10px;font-weight:600;transition:.2s;border:none;background:none}
+.bnav-item.active{color:var(--accent)}
+.bnav-item .icon{font-size:20px}
+
+/* Section nav */
+.section-nav{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.section-btn{background:var(--card);border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.2s;flex-shrink:0;position:relative}
+.section-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.sec-progress{display:block;height:2px;border-radius:1px;background:var(--border);margin-top:4px;overflow:hidden}
+.sec-progress-fill{height:100%;background:var(--green);transition:.3s}
+
+/* Filter */
+.filter-row{display:flex;gap:6px;padding:4px 16px 8px;flex-wrap:wrap}
+.filter-btn{font-size:11px;padding:4px 10px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:.2s}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.content{padding:12px 16px 80px;max-width:800px;margin:0 auto}
+
+/* Sentence card */
+.sentence-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:.3s}
+.sentence-card.mastered{border-color:var(--green)}
+.sentence-header{display:flex;align-items:center;padding:12px 14px;gap:8px;cursor:pointer}
+.sentence-num{background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sentence-card.mastered .sentence-num{background:var(--green)}
+.sentence-en{font-size:14px;line-height:1.5;flex:1;color:var(--text)}
+.sentence-expand{color:var(--text2);font-size:16px;transition:.3s;flex-shrink:0}
+.sentence-card.open .sentence-expand{transform:rotate(180deg)}
+.sentence-body{display:none;border-top:1px solid var(--border)}
+.sentence-card.open .sentence-body{display:block}
+.sentence-ja{padding:10px 14px;background:rgba(74,158,255,.05);font-size:13px;color:var(--accent);line-height:1.6;border-bottom:1px solid var(--border)}
+
+/* Word list */
+.word-list{padding:6px 0}
+.word-item{padding:8px 14px;border-bottom:1px solid rgba(42,48,80,.5)}
+.word-item:last-child{border-bottom:none}
+.word-top{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.word-en{font-size:14px;font-weight:600;color:var(--text)}
+.word-phonetic{font-size:11px;color:var(--text2);font-style:italic}
+.word-pos{font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;background:var(--accent2);color:#fff}
+.word-meanings{margin-top:4px;font-size:12px;color:var(--text);line-height:1.5}
+.word-related{margin-top:3px;font-size:11px;color:var(--text2);line-height:1.4}
+.word-status{display:flex;gap:6px;margin-top:6px}
+.wsbtn{font-size:10px;padding:3px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:.2s}
+.wsbtn:hover{border-color:var(--accent)}
+.wsbtn.known{background:var(--green);color:#fff;border-color:var(--green)}
+.wsbtn.learning{background:var(--orange);color:#fff;border-color:var(--orange)}
+
+/* Flashcard */
+.fc-container{display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0}
+.fc-mode-toggle{display:flex;gap:6px;margin-bottom:4px}
+.fc-mode-btn{font-size:11px;padding:5px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer}
+.fc-mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.flashcard{background:var(--card);border:1px solid var(--border);border-radius:16px;width:100%;max-width:500px;min-height:240px;padding:24px 20px;text-align:center;cursor:pointer;transition:.3s;position:relative}
+.flashcard:active{transform:scale(.98)}
+.fc-num{position:absolute;top:12px;left:16px;font-size:11px;color:var(--text2);font-weight:600}
+.fc-sec{position:absolute;top:12px;right:16px;font-size:10px;color:var(--accent);font-weight:600}
+.fc-main{font-size:22px;line-height:1.5;margin-top:16px;color:var(--text);min-height:60px;display:flex;align-items:center;justify-content:center}
+.fc-divider{width:50px;height:2px;background:var(--accent);margin:16px auto;opacity:0;transition:.3s}
+.flashcard.revealed .fc-divider{opacity:1}
+.fc-answer{font-size:15px;color:var(--accent);line-height:1.5;opacity:0;transform:translateY(8px);transition:.3s}
+.flashcard.revealed .fc-answer{opacity:1;transform:translateY(0)}
+.fc-detail{margin-top:12px;text-align:left;opacity:0;transition:.3s .1s;font-size:12px;color:var(--text2);line-height:1.6}
+.flashcard.revealed .fc-detail{opacity:1}
+.fc-hint{font-size:11px;color:var(--text2);margin-top:10px}
+.flashcard.revealed .fc-hint{display:none}
+.fc-controls{display:flex;gap:10px;width:100%;max-width:500px}
+.fc-btn{flex:1;padding:12px;border-radius:10px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.fc-btn.again{background:var(--red);color:#fff}
+.fc-btn.good{background:var(--green);color:#fff}
+.fc-btn.easy{background:var(--accent);color:#fff}
+.fc-btn:active{transform:scale(.95)}
+.fc-progress{width:100%;max-width:500px;height:4px;background:var(--card);border-radius:2px;overflow:hidden}
+.fc-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));transition:.3s;border-radius:2px}
+
+/* Quiz */
+.quiz-container{max-width:600px;margin:0 auto;padding:16px 0}
+.quiz-type-row{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
+.quiz-type-btn{font-size:11px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer}
+.quiz-type-btn.active{background:var(--accent2);color:#fff;border-color:var(--accent2)}
+.quiz-q{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:center}
+.quiz-prompt{font-size:12px;color:var(--text2);margin-bottom:10px}
+.quiz-word{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px}
+.quiz-context{font-size:13px;color:var(--text2);line-height:1.4;font-style:italic}
+.quiz-blank{font-size:18px;color:var(--text);line-height:1.6;margin-top:8px}
+.quiz-blank b{color:var(--accent);border-bottom:2px dashed var(--accent);padding:0 4px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quiz-opt{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:14px;font-size:13px;color:var(--text);cursor:pointer;transition:.2s;text-align:center;line-height:1.4}
+.quiz-opt:hover{border-color:var(--accent);background:var(--card2)}
+.quiz-opt:active{transform:scale(.97)}
+.quiz-opt.correct{border-color:var(--green);background:rgba(0,210,160,.1);color:var(--green)}
+.quiz-opt.wrong{border-color:var(--red);background:rgba(255,107,107,.1);color:var(--red)}
+.quiz-input{width:100%;background:var(--card);border:2px solid var(--border);color:var(--text);padding:14px;border-radius:10px;font-size:16px;text-align:center;outline:none;margin-bottom:10px}
+.quiz-input:focus{border-color:var(--accent)}
+.quiz-score-row{text-align:center;padding:12px;font-size:13px;color:var(--text2)}
+.quiz-score-row span{color:var(--gold);font-weight:700;font-size:16px}
+
 /* Search */
-.search-bar{padding:12px 16px}
+.search-bar{padding:10px 16px}
 .search-input{width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-size:14px;outline:none;transition:.2s}
 .search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(74,158,255,.15)}
 .search-input::placeholder{color:var(--text2)}
 
-/* Responsive */
+/* Settings modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto}
+.modal h2{font-size:16px;margin-bottom:16px;color:var(--accent)}
+.modal-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.modal-btn{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:8px;font-size:12px;cursor:pointer;transition:.2s;margin-top:8px;width:100%}
+.modal-btn:hover{border-color:var(--accent);background:var(--card2)}
+.modal-btn.danger{border-color:var(--red);color:var(--red)}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text2);font-size:20px;cursor:pointer}
+
 @media(max-width:480px){
-  .header h1{font-size:15px}
+  .header h1{font-size:14px}
   .quiz-options{grid-template-columns:1fr}
-  .flashcard-en{font-size:17px}
-  .stat-card{min-width:80px;padding:8px 10px}
-  .stat-card .num{font-size:18px}
+  .fc-main{font-size:18px}
+  .stat-card{min-width:60px;padding:6px 8px}
+  .stat-card .num{font-size:16px}
 }
-
-/* Animations */
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.fade-in{animation:fadeIn .3s ease}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.pulse{animation:pulse .3s ease}
-
-/* Scrollbar */
-::-webkit-scrollbar{width:6px;height:6px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .25s ease}
+::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 </style>
@@ -153,445 +173,398 @@ a{color:var(--accent);text-decoration:none}
 <div class="header">
   <h1>DUO 3.0<span>単語帳</span></h1>
   <button class="tts-btn" onclick="toggleAutoTTS()" id="autoTTSBtn" title="自動読み上げ">&#128264;</button>
-  <button class="header-btn" onclick="resetProgress()" title="リセット">&#8634;</button>
+  <button class="hbtn" onclick="showSettings()">&#9881;</button>
 </div>
 
-<div class="stats-bar" id="statsBar">
-  <div class="stat-card"><div class="num" id="statTotal">0</div><div class="label">総単語数</div></div>
-  <div class="stat-card"><div class="num" id="statKnown" style="color:var(--green)">0</div><div class="label">覚えた</div></div>
+<div class="streak-bar">
+  <div class="streak-item"><span class="fire">&#128293;</span><span class="v" id="streakDays">0</span>日連続</div>
+  <div class="streak-item" style="margin-left:auto">今日 <span class="v" id="todayCount">0</span>語</div>
+  <svg class="progress-ring" viewBox="0 0 44 44">
+    <circle cx="22" cy="22" r="18" fill="none" stroke="var(--border)" stroke-width="3"/>
+    <circle cx="22" cy="22" r="18" fill="none" stroke="var(--green)" stroke-width="3" stroke-dasharray="113" stroke-dashoffset="113" stroke-linecap="round" transform="rotate(-90 22 22)" id="dailyRing"/>
+    <text x="22" y="24" text-anchor="middle" fill="var(--text)" font-size="10" font-weight="700" id="dailyPct">0%</text>
+  </svg>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-card"><div class="num" id="statTotal">0</div><div class="label">総単語</div></div>
+  <div class="stat-card"><div class="num" id="statKnown" style="color:var(--green)">0</div><div class="label">完了</div></div>
   <div class="stat-card"><div class="num" id="statLearning" style="color:var(--orange)">0</div><div class="label">学習中</div></div>
   <div class="stat-card"><div class="num" id="statNew" style="color:var(--text2)">0</div><div class="label">未学習</div></div>
   <div class="stat-card"><div class="num" id="statPercent" style="color:var(--gold)">0%</div><div class="label">達成率</div></div>
 </div>
 
-<div class="tabs">
-  <div class="tab active" data-tab="browse" onclick="switchTab('browse')">一覧</div>
-  <div class="tab" data-tab="flashcard" onclick="switchTab('flashcard')">フラッシュカード</div>
-  <div class="tab" data-tab="quiz" onclick="switchTab('quiz')">クイズ</div>
-  <div class="tab" data-tab="search" onclick="switchTab('search')">検索</div>
-</div>
-
 <div id="browseView">
   <div class="section-nav" id="sectionNav"></div>
+  <div class="filter-row" id="filterRow"></div>
   <div class="content" id="sentenceList"></div>
 </div>
-
 <div id="flashcardView" style="display:none">
   <div class="section-nav" id="fcSectionNav"></div>
-  <div class="content">
-    <div class="flashcard-container" id="flashcardContainer"></div>
-  </div>
+  <div class="content"><div class="fc-container" id="fcContainer"></div></div>
 </div>
-
 <div id="quizView" style="display:none">
-  <div class="content">
-    <div class="quiz-container" id="quizContainer"></div>
-  </div>
+  <div class="content"><div class="quiz-container" id="quizContainer"></div></div>
 </div>
-
 <div id="searchView" style="display:none">
-  <div class="search-bar">
-    <input type="text" class="search-input" id="searchInput" placeholder="英単語・日本語で検索..." oninput="doSearch(this.value)">
-  </div>
+  <div class="search-bar"><input type="text" class="search-input" id="searchInput" placeholder="英単語・日本語で検索..." oninput="doSearch(this.value)"></div>
   <div class="content" id="searchResults"></div>
 </div>
 
+<div class="bottom-nav">
+  <button class="bnav-item active" data-tab="browse" onclick="switchTab('browse')"><span class="icon">&#128218;</span>一覧</button>
+  <button class="bnav-item" data-tab="flashcard" onclick="switchTab('flashcard')"><span class="icon">&#127183;</span>カード</button>
+  <button class="bnav-item" data-tab="quiz" onclick="switchTab('quiz')"><span class="icon">&#10004;</span>クイズ</button>
+  <button class="bnav-item" data-tab="search" onclick="switchTab('search')"><span class="icon">&#128269;</span>検索</button>
+</div>
+
+<div id="modalOverlay" class="modal-overlay" style="display:none" onclick="if(event.target===this)hideSettings()"></div>
+
 <script src="data.js"></script>
 <script>
-// State
-let currentTab = 'browse';
-let currentSection = 0; // 0=all
-let wordStatus = {}; // { "word": "known"|"learning"|"new" }
-let autoTTS = false;
-let fcIndex = 0;
-let fcCards = [];
-let quizScore = { correct: 0, total: 0 };
+let currentTab='browse',currentSection=0,wordStatus={},autoTTS=false,fcIndex=0,fcCards=[];
+let fcMode='sentence'; // sentence | word
+let quizType='meaning'; // meaning | reverse | blank | spell
+let quizScore={correct:0,total:0};
+let filter='all'; // all | new | learning | known
+let streak={days:0,lastDate:'',todayWords:[]};
 
-// Init
-function init() {
-  loadProgress();
-  renderSectionNav();
-  renderBrowse();
-  updateStats();
+function init(){loadProgress();loadStreak();renderSectionNav();renderFilters();renderBrowse();updateStats();updateStreak()}
+
+// Storage
+function loadProgress(){try{const d=localStorage.getItem('duo30_v2');if(d)wordStatus=JSON.parse(d)}catch(e){}}
+function saveProgress(){localStorage.setItem('duo30_v2',JSON.stringify(wordStatus))}
+function loadStreak(){try{const d=localStorage.getItem('duo30_streak');if(d)streak=JSON.parse(d)}catch(e){}}
+function saveStreak(){localStorage.setItem('duo30_streak',JSON.stringify(streak))}
+
+function trackWord(word){
+  const today=new Date().toISOString().slice(0,10);
+  if(streak.lastDate!==today){
+    if(streak.lastDate===new Date(Date.now()-86400000).toISOString().slice(0,10))streak.days++;
+    else streak.days=1;
+    streak.todayWords=[];streak.lastDate=today;
+  }
+  if(!streak.todayWords.includes(word)){streak.todayWords.push(word);saveStreak();updateStreak()}
 }
 
-// LocalStorage
-function loadProgress() {
-  try {
-    const d = localStorage.getItem('duo30_progress');
-    if (d) wordStatus = JSON.parse(d);
-  } catch(e) {}
-}
-function saveProgress() {
-  localStorage.setItem('duo30_progress', JSON.stringify(wordStatus));
-}
-function resetProgress() {
-  if (!confirm('進捗をリセットしますか？')) return;
-  wordStatus = {};
-  saveProgress();
-  renderBrowse();
-  updateStats();
+function updateStreak(){
+  const today=new Date().toISOString().slice(0,10);
+  if(streak.lastDate!==today){document.getElementById('todayCount').textContent='0';document.getElementById('streakDays').textContent=streak.days}
+  else{document.getElementById('todayCount').textContent=streak.todayWords.length;document.getElementById('streakDays').textContent=streak.days}
+  const goal=20,pct=Math.min(100,Math.round((streak.lastDate===today?streak.todayWords.length:0)/goal*100));
+  document.getElementById('dailyPct').textContent=pct+'%';
+  document.getElementById('dailyRing').setAttribute('stroke-dashoffset',113-113*pct/100);
 }
 
 // Stats
-function updateStats() {
-  let total = 0, known = 0, learning = 0;
-  DUO_DATA.forEach(s => s.sentences.forEach(sent => {
-    sent.words.forEach(w => {
-      total++;
-      const st = wordStatus[w.word];
-      if (st === 'known') known++;
-      else if (st === 'learning') learning++;
-    });
-  }));
-  document.getElementById('statTotal').textContent = total;
-  document.getElementById('statKnown').textContent = known;
-  document.getElementById('statLearning').textContent = learning;
-  document.getElementById('statNew').textContent = total - known - learning;
-  document.getElementById('statPercent').textContent = total ? Math.round(known / total * 100) + '%' : '0%';
+function updateStats(){
+  let total=0,known=0,learning=0;
+  DUO_DATA.forEach(s=>s.sentences.forEach(sent=>sent.words.forEach(w=>{total++;const st=wordStatus[w.word];if(st==='known')known++;else if(st==='learning')learning++})));
+  document.getElementById('statTotal').textContent=total;
+  document.getElementById('statKnown').textContent=known;
+  document.getElementById('statLearning').textContent=learning;
+  document.getElementById('statNew').textContent=total-known-learning;
+  document.getElementById('statPercent').textContent=total?Math.round(known/total*100)+'%':'0%';
 }
 
 // TTS
-function speak(text) {
-  if ('speechSynthesis' in window) {
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
-    u.rate = 0.85;
-    speechSynthesis.speak(u);
-  }
-}
-function toggleAutoTTS() {
-  autoTTS = !autoTTS;
-  document.getElementById('autoTTSBtn').style.color = autoTTS ? 'var(--green)' : 'var(--accent)';
-}
+function speak(text){if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=0.85;speechSynthesis.speak(u)}}
+function toggleAutoTTS(){autoTTS=!autoTTS;document.getElementById('autoTTSBtn').style.color=autoTTS?'var(--green)':'var(--accent)'}
 
 // Tabs
-function switchTab(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
-  document.getElementById('browseView').style.display = tab === 'browse' ? '' : 'none';
-  document.getElementById('flashcardView').style.display = tab === 'flashcard' ? '' : 'none';
-  document.getElementById('quizView').style.display = tab === 'quiz' ? '' : 'none';
-  document.getElementById('searchView').style.display = tab === 'search' ? '' : 'none';
-  if (tab === 'flashcard') initFlashcards();
-  if (tab === 'quiz') initQuiz();
-  if (tab === 'search') document.getElementById('searchInput').focus();
+function switchTab(tab){
+  currentTab=tab;
+  document.querySelectorAll('.bnav-item').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+  ['browseView','flashcardView','quizView','searchView'].forEach(v=>document.getElementById(v).style.display='none');
+  document.getElementById(tab+'View').style.display='';
+  if(tab==='flashcard')initFlashcards();
+  if(tab==='quiz')initQuiz();
+  if(tab==='search')document.getElementById('searchInput').focus();
 }
 
-// Section nav
-function renderSectionNav() {
-  const targets = ['sectionNav', 'fcSectionNav'];
-  targets.forEach(id => {
-    const nav = document.getElementById(id);
-    if (!nav) return;
-    let html = `<button class="section-btn ${currentSection===0?'active':''}" onclick="selectSection(0)">ALL</button>`;
-    DUO_DATA.forEach(s => {
-      html += `<button class="section-btn ${currentSection===s.section?'active':''}" onclick="selectSection(${s.section})">Sec ${s.section}</button>`;
+// Section nav with progress
+function renderSectionNav(){
+  ['sectionNav','fcSectionNav'].forEach(id=>{
+    const nav=document.getElementById(id);if(!nav)return;
+    let html=`<button class="section-btn ${currentSection===0?'active':''}" onclick="selectSection(0)">ALL</button>`;
+    DUO_DATA.forEach(s=>{
+      let total=0,known=0;s.sentences.forEach(sent=>sent.words.forEach(w=>{total++;if(wordStatus[w.word]==='known')known++}));
+      const pct=total?Math.round(known/total*100):0;
+      html+=`<button class="section-btn ${currentSection===s.section?'active':''}" onclick="selectSection(${s.section})">
+        Sec ${s.section}<div class="sec-progress"><div class="sec-progress-fill" style="width:${pct}%"></div></div></button>`;
     });
-    nav.innerHTML = html;
+    nav.innerHTML=html;
   });
 }
-function selectSection(n) {
-  currentSection = n;
-  renderSectionNav();
-  if (currentTab === 'browse') renderBrowse();
-  if (currentTab === 'flashcard') initFlashcards();
-}
+function selectSection(n){currentSection=n;renderSectionNav();if(currentTab==='browse')renderBrowse();if(currentTab==='flashcard')initFlashcards()}
 
-// Browse view
-function renderBrowse() {
-  const list = document.getElementById('sentenceList');
-  let html = '';
-  const sections = currentSection === 0 ? DUO_DATA : DUO_DATA.filter(s => s.section === currentSection);
-  sections.forEach(sec => {
-    html += `<div style="padding:8px 0 4px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px">SECTION ${sec.section} — ${sec.title}</div>`;
-    sec.sentences.forEach(sent => {
-      const allKnown = sent.words.every(w => wordStatus[w.word] === 'known');
-      html += `<div class="sentence-card ${allKnown?'mastered':''}" id="sent-${sent.id}">
-        <div class="sentence-header" onclick="toggleSentence(${sent.id})">
+// Filters
+function renderFilters(){
+  const row=document.getElementById('filterRow');
+  row.innerHTML=['all','new','learning','known'].map(f=>`<button class="filter-btn ${filter===f?'active':''}" onclick="setFilter('${f}')">${{all:'全て',new:'未学習',learning:'学習中',known:'完了'}[f]}</button>`).join('');
+}
+function setFilter(f){filter=f;renderFilters();renderBrowse()}
+
+// Browse
+function renderBrowse(){
+  const list=document.getElementById('sentenceList');let html='';
+  const sections=currentSection===0?DUO_DATA:DUO_DATA.filter(s=>s.section===currentSection);
+  sections.forEach(sec=>{
+    let sectionHasVisible=false;
+    let sentHtml='';
+    sec.sentences.forEach(sent=>{
+      if(filter!=='all'){
+        const hasMatch=sent.words.some(w=>{const st=wordStatus[w.word]||'new';return(filter==='new'&&st==='new')||(filter==='learning'&&st==='learning')||(filter==='known'&&st==='known')});
+        if(!hasMatch)return;
+      }
+      sectionHasVisible=true;
+      const allKnown=sent.words.every(w=>wordStatus[w.word]==='known');
+      sentHtml+=`<div class="sentence-card ${allKnown?'mastered':''}" id="sent-${sent.id}">
+        <div class="sentence-header" onclick="toggleSent(${sent.id})">
           <div class="sentence-num">${sent.id}</div>
           <div class="sentence-en">${sent.en}</div>
-          <button class="tts-btn" onclick="event.stopPropagation();speak('${sent.en.replace(/'/g,"\\'")}')">&#128264;</button>
+          <button class="tts-btn" onclick="event.stopPropagation();speak(\`${sent.en.replace(/`/g,'')}\`)">&#128264;</button>
           <div class="sentence-expand">&#9660;</div>
         </div>
         <div class="sentence-body">
           <div class="sentence-ja">${sent.ja}</div>
-          <div class="word-list">
-            ${sent.words.map(w => renderWordItem(w)).join('')}
-          </div>
+          <div class="word-list">${sent.words.map(w=>renderWord(w)).join('')}</div>
         </div>
       </div>`;
     });
+    if(sectionHasVisible){
+      html+=`<div style="padding:6px 0 4px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px">SECTION ${sec.section} — ${sec.title}</div>`;
+      html+=sentHtml;
+    }
   });
-  list.innerHTML = html;
+  if(!html)html='<p style="text-align:center;color:var(--text2);padding:40px">該当する文がありません</p>';
+  list.innerHTML=html;
 }
 
-function renderWordItem(w) {
-  const st = wordStatus[w.word] || 'new';
+function renderWord(w){
+  const st=wordStatus[w.word]||'new';
   return `<div class="word-item">
-    <div class="word-top">
-      <span class="word-en">${w.word}</span>
-      ${w.phonetic ? `<span class="word-phonetic">[${w.phonetic}]</span>` : ''}
-      <span class="word-pos">${w.pos}</span>
-    </div>
-    <div class="word-meanings">${w.meanings.map((m,i) => `${w.meanings.length>1?'<span style="color:var(--text2)">'+(i+1)+'. </span>':''}${m}`).join('<br>')}</div>
-    ${w.related.length ? `<div class="word-related">${w.related.join(' / ')}</div>` : ''}
+    <div class="word-top"><span class="word-en">${w.word}</span>${w.phonetic?`<span class="word-phonetic">[${w.phonetic}]</span>`:''}<span class="word-pos">${w.pos}</span>
+    <button class="tts-btn" onclick="speak('${w.word.replace(/'/g,"\\'").replace(/\(.+?\)/g,'').trim()}')" style="font-size:13px;padding:2px 4px">&#128264;</button></div>
+    <div class="word-meanings">${w.meanings.map((m,i)=>`${w.meanings.length>1?'<span style="color:var(--text2)">'+(i+1)+'. </span>':''}${m}`).join('<br>')}</div>
+    ${w.related.length?`<div class="word-related">${w.related.join(' / ')}</div>`:''}
     <div class="word-status">
-      <button class="word-status-btn ${st==='known'?'known':''}" onclick="event.stopPropagation();setWordStatus('${esc(w.word)}','known')">覚えた</button>
-      <button class="word-status-btn ${st==='learning'?'learning':''}" onclick="event.stopPropagation();setWordStatus('${esc(w.word)}','learning')">学習中</button>
+      <button class="wsbtn ${st==='known'?'known':''}" onclick="event.stopPropagation();setWS('${esc(w.word)}','known')">&#10003; 完了</button>
+      <button class="wsbtn ${st==='learning'?'learning':''}" onclick="event.stopPropagation();setWS('${esc(w.word)}','learning')">&#9997; 学習中</button>
     </div>
   </div>`;
 }
 
-function esc(s) { return s.replace(/'/g, "\\'").replace(/"/g, '\\"'); }
+function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'\\"')}
+function toggleSent(id){const el=document.getElementById('sent-'+id);el.classList.toggle('open');if(el.classList.contains('open')&&autoTTS){const s=findSent(id);if(s)speak(s.en)}}
+function findSent(id){for(const s of DUO_DATA)for(const sent of s.sentences)if(sent.id===id)return sent;return null}
+function setWS(word,status){if(wordStatus[word]===status)delete wordStatus[word];else{wordStatus[word]=status;trackWord(word)}saveProgress();updateStats();renderSectionNav();renderBrowse()}
 
-function toggleSentence(id) {
-  const el = document.getElementById('sent-' + id);
-  el.classList.toggle('open');
-  if (el.classList.contains('open') && autoTTS) {
-    const sent = findSentence(id);
-    if (sent) speak(sent.en);
-  }
+// Flashcard - sentence + word mode
+function initFlashcards(){
+  const sections=currentSection===0?DUO_DATA:DUO_DATA.filter(s=>s.section===currentSection);
+  fcCards=[];
+  if(fcMode==='sentence'){sections.forEach(s=>s.sentences.forEach(sent=>fcCards.push({type:'sentence',data:sent,sec:s})))}
+  else{sections.forEach(s=>s.sentences.forEach(sent=>sent.words.forEach(w=>{if((wordStatus[w.word]||'new')!=='known')fcCards.push({type:'word',data:w,sent,sec:s})})))}
+  for(let i=fcCards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[fcCards[i],fcCards[j]]=[fcCards[j],fcCards[i]]}
+  fcIndex=0;renderFC();
 }
 
-function findSentence(id) {
-  for (const s of DUO_DATA) for (const sent of s.sentences) if (sent.id === id) return sent;
-  return null;
-}
-
-function setWordStatus(word, status) {
-  if (wordStatus[word] === status) {
-    delete wordStatus[word];
-  } else {
-    wordStatus[word] = status;
-  }
-  saveProgress();
-  updateStats();
-  renderBrowse();
-}
-
-// Flashcard
-function initFlashcards() {
-  const sections = currentSection === 0 ? DUO_DATA : DUO_DATA.filter(s => s.section === currentSection);
-  fcCards = [];
-  sections.forEach(s => s.sentences.forEach(sent => fcCards.push(sent)));
-  // Shuffle
-  for (let i = fcCards.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [fcCards[i], fcCards[j]] = [fcCards[j], fcCards[i]];
-  }
-  fcIndex = 0;
-  renderFlashcard();
-}
-
-function renderFlashcard() {
-  const container = document.getElementById('flashcardContainer');
-  if (fcIndex >= fcCards.length) {
-    container.innerHTML = `<div class="quiz-score fade-in">
-      <div class="big">&#127881;</div>
-      <div style="font-size:18px;color:var(--text);margin-bottom:10px">全カード完了！</div>
-      <button class="header-btn" onclick="initFlashcards()" style="font-size:15px;padding:12px 24px">もう一度</button>
-    </div>`;
+function renderFC(){
+  const c=document.getElementById('fcContainer');
+  let modeHtml=`<div class="fc-mode-toggle">
+    <button class="fc-mode-btn ${fcMode==='sentence'?'active':''}" onclick="fcMode='sentence';initFlashcards()">文カード</button>
+    <button class="fc-mode-btn ${fcMode==='word'?'active':''}" onclick="fcMode='word';initFlashcards()">単語カード</button>
+  </div>`;
+  if(fcIndex>=fcCards.length){
+    c.innerHTML=modeHtml+`<div style="text-align:center;padding:40px" class="fade-in"><div style="font-size:48px;margin-bottom:12px">&#127881;</div><div style="font-size:16px;color:var(--text);margin-bottom:12px">${fcMode==='word'?'未学習の単語なし！':'全カード完了！'}</div><button class="hbtn" onclick="initFlashcards()" style="font-size:14px;padding:10px 24px">もう一度</button></div>`;
     return;
   }
-  const sent = fcCards[fcIndex];
-  const sec = DUO_DATA.find(s => s.sentences.includes(sent));
-  container.innerHTML = `
-    <div class="flashcard-progress"><div class="flashcard-progress-fill" style="width:${(fcIndex/fcCards.length)*100}%"></div></div>
-    <div class="flashcard fade-in" id="flashcard" onclick="revealFlashcard()">
-      <div class="flashcard-num">#${sent.id}</div>
-      <div class="flashcard-section">Section ${sec ? sec.section : '?'}</div>
-      <div class="flashcard-en">${sent.en}</div>
-      <div class="flashcard-divider"></div>
-      <div class="flashcard-ja">${sent.ja}</div>
-      <div class="flashcard-words">
-        ${sent.words.map(w => `<span class="flashcard-word"><b>${w.word}</b> ${w.pos} ${w.meanings[0]}</span>`).join('')}
-      </div>
-      <div class="flashcard-hint">タップして答えを見る</div>
+  const card=fcCards[fcIndex];
+  let mainText,answerText,detailText;
+  if(card.type==='sentence'){
+    mainText=card.data.en;answerText=card.data.ja;
+    detailText=card.data.words.map(w=>`<b>${w.word}</b> ${w.pos} ${w.meanings[0]}`).join('<br>');
+  }else{
+    mainText=card.data.word;answerText=card.data.meanings[0];
+    detailText=`<i>"${card.sent.en}"</i><br>${card.data.related.slice(0,3).join(' / ')}`;
+  }
+  c.innerHTML=modeHtml+`
+    <div class="fc-progress"><div class="fc-progress-fill" style="width:${(fcIndex/fcCards.length)*100}%"></div></div>
+    <div class="flashcard fade-in" id="flashcard" onclick="revealFC()">
+      <div class="fc-num">#${card.type==='sentence'?card.data.id:(fcIndex+1)}</div>
+      <div class="fc-sec">Section ${card.sec.section}</div>
+      <div class="fc-main">${mainText}</div>
+      <div class="fc-divider"></div>
+      <div class="fc-answer">${answerText}</div>
+      <div class="fc-detail">${detailText}</div>
+      <div class="fc-hint">タップで答え表示</div>
     </div>
-    <div class="flashcard-controls" id="fcControls" style="display:none">
-      <button class="flashcard-btn again" onclick="fcNext('again')">もう一度</button>
-      <button class="flashcard-btn good" onclick="fcNext('good')">覚えた</button>
-      <button class="flashcard-btn easy" onclick="fcNext('easy')">簡単</button>
+    <div class="fc-controls" id="fcControls" style="display:none">
+      <button class="fc-btn again" onclick="fcNext('again')">&#128260; もう一度</button>
+      <button class="fc-btn good" onclick="fcNext('good')">&#128077; OK</button>
+      <button class="fc-btn easy" onclick="fcNext('easy')">&#10024; 簡単</button>
     </div>
-    <div style="text-align:center;margin-top:8px">
-      <button class="tts-btn" onclick="speak('${sent.en.replace(/'/g,"\\'")}')">&#128264; 読み上げ</button>
-      <span style="font-size:12px;color:var(--text2);margin-left:12px">${fcIndex+1} / ${fcCards.length}</span>
+    <div style="text-align:center;margin-top:6px">
+      <button class="tts-btn" onclick="speak(\`${(card.type==='sentence'?card.data.en:card.data.word).replace(/`/g,'')}\`)">&#128264;</button>
+      <span style="font-size:11px;color:var(--text2);margin-left:8px">${fcIndex+1}/${fcCards.length}</span>
     </div>`;
 }
 
-function revealFlashcard() {
-  const fc = document.getElementById('flashcard');
-  if (fc.classList.contains('revealed')) return;
-  fc.classList.add('revealed');
-  document.getElementById('fcControls').style.display = 'flex';
-  if (autoTTS) {
-    const sent = fcCards[fcIndex];
-    speak(sent.en);
+function revealFC(){const fc=document.getElementById('flashcard');if(!fc||fc.classList.contains('revealed'))return;fc.classList.add('revealed');document.getElementById('fcControls').style.display='flex';if(autoTTS){const card=fcCards[fcIndex];speak(card.type==='sentence'?card.data.en:card.data.word)}}
+
+function fcNext(action){
+  const card=fcCards[fcIndex];
+  if(card.type==='sentence'){
+    if(action==='easy')card.data.words.forEach(w=>{wordStatus[w.word]='known';trackWord(w.word)});
+    else if(action==='good')card.data.words.forEach(w=>{if(!wordStatus[w.word]){wordStatus[w.word]='learning';trackWord(w.word)}});
+  }else{
+    if(action==='easy'){wordStatus[card.data.word]='known';trackWord(card.data.word)}
+    else if(action==='good'){if(!wordStatus[card.data.word])wordStatus[card.data.word]='learning';trackWord(card.data.word)}
+  }
+  if(action==='again'){if(fcIndex+3<fcCards.length)fcCards.splice(fcIndex+3,0,card);else fcCards.push(card)}
+  saveProgress();updateStats();renderSectionNav();fcIndex++;renderFC();
+}
+
+// Quiz - 4 types
+function initQuiz(){quizScore={correct:0,total:0};renderQuiz()}
+
+function getAllWords(){
+  const all=[];
+  DUO_DATA.forEach(s=>s.sentences.forEach(sent=>sent.words.forEach(w=>{if(w.meanings.length>0)all.push({...w,sentEn:sent.en,sentId:sent.id})})));
+  return all;
+}
+
+function renderQuiz(){
+  const c=document.getElementById('quizContainer');
+  const allWords=getAllWords();
+  if(allWords.length<4){c.innerHTML='<p style="text-align:center;color:var(--text2)">単語不足</p>';return}
+  const typeRow=`<div class="quiz-type-row">
+    ${['meaning','reverse','blank','spell'].map(t=>`<button class="quiz-type-btn ${quizType===t?'active':''}" onclick="quizType='${t}';renderQuiz()">${{meaning:'英→日',reverse:'日→英',blank:'穴埋め',spell:'スペル'}[t]}</button>`).join('')}
+  </div>`;
+  const scoreRow=`<div class="quiz-score-row">正解 <span>${quizScore.correct}</span> / ${quizScore.total}</div>`;
+  const idx=Math.floor(Math.random()*allWords.length);
+  const target=allWords[idx];
+
+  if(quizType==='meaning'){
+    const wrongs=pickWrongs(allWords,idx,3);
+    const opts=[target,...wrongs].sort(()=>Math.random()-.5);
+    c.innerHTML=typeRow+`<div class="quiz-q fade-in"><div class="quiz-prompt">この単語の意味は？</div><div class="quiz-word">${target.word}</div><div class="quiz-context">"${target.sentEn}"</div></div>
+    <div class="quiz-options">${opts.map(o=>`<div class="quiz-opt" data-correct="${o.word===target.word}" onclick="checkQuiz(this,'${esc(target.word)}')">${o.meanings[0]}</div>`).join('')}</div>`+scoreRow;
+  }
+  else if(quizType==='reverse'){
+    const wrongs=pickWrongs(allWords,idx,3);
+    const opts=[target,...wrongs].sort(()=>Math.random()-.5);
+    c.innerHTML=typeRow+`<div class="quiz-q fade-in"><div class="quiz-prompt">この意味の英単語は？</div><div class="quiz-word" style="font-size:18px">${target.meanings[0]}</div></div>
+    <div class="quiz-options">${opts.map(o=>`<div class="quiz-opt" data-correct="${o.word===target.word}" onclick="checkQuiz(this,'${esc(target.word)}')">${o.word}</div>`).join('')}</div>`+scoreRow;
+  }
+  else if(quizType==='blank'){
+    const clean=target.word.replace(/\(.+?\)/g,'').replace(/\.\.\./g,'').trim().split(' ')[0];
+    const blanked=target.sentEn.replace(new RegExp(clean.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),'______');
+    const wrongs=pickWrongs(allWords,idx,3);
+    const opts=[target,...wrongs].sort(()=>Math.random()-.5);
+    c.innerHTML=typeRow+`<div class="quiz-q fade-in"><div class="quiz-prompt">空欄に入る単語は？</div><div class="quiz-blank">${blanked}</div><div class="quiz-context" style="margin-top:8px">${target.meanings[0]}</div></div>
+    <div class="quiz-options">${opts.map(o=>{const w=o.word.replace(/\(.+?\)/g,'').replace(/\.\.\./g,'').trim().split(' ')[0];return`<div class="quiz-opt" data-correct="${o.word===target.word}" onclick="checkQuiz(this,'${esc(target.word)}')">${w}</div>`}).join('')}</div>`+scoreRow;
+  }
+  else if(quizType==='spell'){
+    const clean=target.word.replace(/\(.+?\)/g,'').replace(/\.\.\./g,'').trim();
+    c.innerHTML=typeRow+`<div class="quiz-q fade-in"><div class="quiz-prompt">この意味の英単語を入力</div><div class="quiz-word" style="font-size:18px">${target.meanings[0]}</div><div class="quiz-context">"${target.sentEn}"</div></div>
+    <input class="quiz-input" id="spellInput" placeholder="英単語を入力..." onkeydown="if(event.key==='Enter')checkSpell('${esc(clean)}')">
+    <div style="text-align:center"><button class="hbtn" onclick="checkSpell('${esc(clean)}')">回答</button></div>`+scoreRow;
+    setTimeout(()=>{const inp=document.getElementById('spellInput');if(inp)inp.focus()},100);
   }
 }
 
-function fcNext(action) {
-  const sent = fcCards[fcIndex];
-  if (action === 'easy') {
-    sent.words.forEach(w => { wordStatus[w.word] = 'known'; });
-  } else if (action === 'good') {
-    sent.words.forEach(w => { if (!wordStatus[w.word]) wordStatus[w.word] = 'learning'; });
-  } else if (action === 'again') {
-    // Put back later
-    if (fcIndex + 3 < fcCards.length) {
-      fcCards.splice(fcIndex + 3, 0, sent);
-    } else {
-      fcCards.push(sent);
-    }
-  }
-  saveProgress();
-  updateStats();
-  fcIndex++;
-  renderFlashcard();
+function pickWrongs(all,excludeIdx,n){
+  const pool=all.filter((_,i)=>i!==excludeIdx);const result=[];
+  while(result.length<n&&pool.length>0){const ri=Math.floor(Math.random()*pool.length);result.push(pool.splice(ri,1)[0])}
+  return result;
 }
 
-// Quiz
-function initQuiz() {
-  quizScore = { correct: 0, total: 0 };
-  renderQuiz();
+function checkQuiz(el,targetWord){
+  if(el.parentElement.dataset.answered)return;
+  el.parentElement.dataset.answered='true';quizScore.total++;
+  if(el.dataset.correct==='true'){quizScore.correct++;el.classList.add('correct');wordStatus[targetWord]='known';trackWord(targetWord)}
+  else{el.classList.add('wrong');el.parentElement.querySelectorAll('.quiz-opt').forEach(o=>{if(o.dataset.correct==='true')o.classList.add('correct')})}
+  saveProgress();updateStats();renderSectionNav();setTimeout(()=>renderQuiz(),1000);
 }
 
-function renderQuiz() {
-  const container = document.getElementById('quizContainer');
-  // Gather all words
-  const allWords = [];
-  DUO_DATA.forEach(s => s.sentences.forEach(sent => sent.words.forEach(w => {
-    if (w.meanings.length > 0) allWords.push({ ...w, sentEn: sent.en, sentId: sent.id });
-  })));
-  if (allWords.length < 4) {
-    container.innerHTML = '<p style="text-align:center;color:var(--text2)">単語が足りません</p>';
-    return;
-  }
-
-  // Pick random word
-  const idx = Math.floor(Math.random() * allWords.length);
-  const target = allWords[idx];
-
-  // Get 3 wrong options
-  const wrongPool = allWords.filter((w,i) => i !== idx && w.meanings[0] !== target.meanings[0]);
-  const wrongs = [];
-  while (wrongs.length < 3 && wrongPool.length > 0) {
-    const ri = Math.floor(Math.random() * wrongPool.length);
-    wrongs.push(wrongPool.splice(ri, 1)[0]);
-  }
-
-  // Shuffle options
-  const options = [target, ...wrongs].sort(() => Math.random() - 0.5);
-
-  container.innerHTML = `
-    <div class="quiz-question fade-in">
-      <div class="quiz-prompt">この単語の意味は？</div>
-      <div class="quiz-word">${target.word}</div>
-      <div class="quiz-context">"${target.sentEn}"</div>
-    </div>
-    <div class="quiz-options" id="quizOptions">
-      ${options.map((o, i) => `<div class="quiz-option" data-correct="${o.word === target.word}" onclick="checkQuiz(this,'${esc(target.word)}')">${o.meanings[0]}</div>`).join('')}
-    </div>
-    <div class="quiz-score">正解: ${quizScore.correct} / ${quizScore.total}</div>
-    <div style="text-align:center;margin-top:12px">
-      <button class="header-btn" onclick="initQuiz()">リセット</button>
-    </div>`;
-}
-
-function checkQuiz(el, targetWord) {
-  if (el.parentElement.dataset.answered) return;
-  el.parentElement.dataset.answered = 'true';
+function checkSpell(answer){
+  const input=document.getElementById('spellInput');if(!input)return;
+  const val=input.value.trim().toLowerCase();
   quizScore.total++;
-
-  const isCorrect = el.dataset.correct === 'true';
-  if (isCorrect) {
-    quizScore.correct++;
-    el.classList.add('correct');
-    wordStatus[targetWord] = 'known';
-  } else {
-    el.classList.add('wrong');
-    // Show correct
-    el.parentElement.querySelectorAll('.quiz-option').forEach(o => {
-      if (o.dataset.correct === 'true') o.classList.add('correct');
-    });
-  }
-  saveProgress();
-  updateStats();
-  setTimeout(() => renderQuiz(), 1200);
+  if(val===answer.toLowerCase()){quizScore.correct++;input.style.borderColor='var(--green)';input.style.color='var(--green)';wordStatus[answer]='known';trackWord(answer)}
+  else{input.style.borderColor='var(--red)';input.style.color='var(--red)';input.value=answer;input.disabled=true}
+  saveProgress();updateStats();renderSectionNav();setTimeout(()=>renderQuiz(),1200);
 }
 
 // Search
-function doSearch(query) {
-  const results = document.getElementById('searchResults');
-  if (!query || query.length < 1) {
-    results.innerHTML = '<p style="text-align:center;color:var(--text2);padding:40px">単語を入力してください</p>';
-    return;
-  }
-  const q = query.toLowerCase();
-  let html = '';
-  let count = 0;
-  DUO_DATA.forEach(sec => {
-    sec.sentences.forEach(sent => {
-      // Search in sentence
-      const sentMatch = sent.en.toLowerCase().includes(q) || sent.ja.includes(q);
-      // Search in words
-      const matchedWords = sent.words.filter(w =>
-        w.word.toLowerCase().includes(q) ||
-        w.meanings.some(m => m.includes(q)) ||
-        (w.phonetic && w.phonetic.includes(q))
-      );
-      if (sentMatch || matchedWords.length > 0) {
-        count++;
-        const highlight = (text) => text.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark style="background:var(--accent);color:#fff;padding:0 2px;border-radius:2px">$1</mark>');
-        html += `<div class="sentence-card" id="search-${sent.id}">
-          <div class="sentence-header" onclick="toggleSentence2('search-${sent.id}')">
-            <div class="sentence-num">${sent.id}</div>
-            <div class="sentence-en">${highlight(sent.en)}</div>
-            <div class="sentence-expand">&#9660;</div>
-          </div>
-          <div class="sentence-body">
-            <div class="sentence-ja">${sent.ja}</div>
-            <div class="word-list">
-              ${(matchedWords.length > 0 ? matchedWords : sent.words).map(w => renderWordItem(w)).join('')}
-            </div>
-          </div>
-        </div>`;
-      }
-    });
-  });
-  results.innerHTML = html || '<p style="text-align:center;color:var(--text2);padding:40px">見つかりません</p>';
-  if (count > 0) results.innerHTML = `<p style="font-size:12px;color:var(--text2);margin-bottom:8px">${count}件見つかりました</p>` + results.innerHTML;
+function doSearch(query){
+  const results=document.getElementById('searchResults');
+  if(!query||query.length<1){results.innerHTML='<p style="text-align:center;color:var(--text2);padding:40px">単語を入力してください</p>';return}
+  const q=query.toLowerCase();let html='',count=0;
+  DUO_DATA.forEach(sec=>sec.sentences.forEach(sent=>{
+    const sentMatch=sent.en.toLowerCase().includes(q)||sent.ja.includes(q);
+    const matchedWords=sent.words.filter(w=>w.word.toLowerCase().includes(q)||w.meanings.some(m=>m.includes(q)));
+    if(sentMatch||matchedWords.length>0){
+      count++;
+      const hl=text=>text.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark style="background:var(--accent);color:#fff;padding:0 2px;border-radius:2px">$1</mark>');
+      html+=`<div class="sentence-card" id="search-${sent.id}"><div class="sentence-header" onclick="document.getElementById('search-${sent.id}').classList.toggle('open')"><div class="sentence-num">${sent.id}</div><div class="sentence-en">${hl(sent.en)}</div><div class="sentence-expand">&#9660;</div></div><div class="sentence-body"><div class="sentence-ja">${sent.ja}</div><div class="word-list">${(matchedWords.length>0?matchedWords:sent.words).map(w=>renderWord(w)).join('')}</div></div></div>`;
+    }
+  }));
+  results.innerHTML=count?`<p style="font-size:11px;color:var(--text2);margin-bottom:8px">${count}件</p>`+html:'<p style="text-align:center;color:var(--text2);padding:40px">見つかりません</p>';
 }
 
-function toggleSentence2(id) {
-  document.getElementById(id).classList.toggle('open');
+// Settings
+function showSettings(){
+  const o=document.getElementById('modalOverlay');
+  o.style.display='flex';
+  o.innerHTML=`<div class="modal fade-in" style="position:relative">
+    <button class="modal-close" onclick="hideSettings()">&times;</button>
+    <h2>&#9881; 設定</h2>
+    <div class="modal-row">1日の目標単語数<span><b>20語</b></span></div>
+    <div class="modal-row">自動読み上げ<span>${autoTTS?'ON':'OFF'}</span></div>
+    <div class="modal-row">総学習日数<span><b>${streak.days}日</b></span></div>
+    <button class="modal-btn" onclick="exportData()">&#128229; データエクスポート</button>
+    <button class="modal-btn" onclick="document.getElementById('importFile').click()">&#128228; データインポート</button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+    <button class="modal-btn danger" onclick="resetAll()">&#128465; 進捗リセット</button>
+  </div>`;
 }
+function hideSettings(){document.getElementById('modalOverlay').style.display='none'}
+
+function exportData(){
+  const data=JSON.stringify({wordStatus,streak,version:2},null,2);
+  const blob=new Blob([data],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='duo30_backup_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+}
+function importData(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    try{const d=JSON.parse(ev.target.result);if(d.wordStatus)wordStatus=d.wordStatus;if(d.streak)streak=d.streak;
+    saveProgress();saveStreak();updateStats();renderSectionNav();renderBrowse();updateStreak();hideSettings();alert('インポート完了')}
+    catch(e){alert('ファイルが不正です')}
+  };reader.readAsText(file);
+}
+function resetAll(){if(!confirm('全進捗をリセットしますか？'))return;wordStatus={};streak={days:0,lastDate:'',todayWords:[]};saveProgress();saveStreak();updateStats();renderSectionNav();renderBrowse();updateStreak();hideSettings()}
 
 // Keyboard
-document.addEventListener('keydown', e => {
-  if (currentTab === 'flashcard') {
-    if (e.code === 'Space') { e.preventDefault(); revealFlashcard(); }
-    if (e.code === 'Digit1' || e.code === 'ArrowLeft') fcNext('again');
-    if (e.code === 'Digit2' || e.code === 'ArrowDown') fcNext('good');
-    if (e.code === 'Digit3' || e.code === 'ArrowRight') fcNext('easy');
+document.addEventListener('keydown',e=>{
+  if(currentTab==='flashcard'){
+    if(e.code==='Space'){e.preventDefault();revealFC()}
+    if(e.code==='Digit1'||e.code==='ArrowLeft')fcNext('again');
+    if(e.code==='Digit2'||e.code==='ArrowDown')fcNext('good');
+    if(e.code==='Digit3'||e.code==='ArrowRight')fcNext('easy');
   }
 });
-
-// Swipe support for flashcards
-let touchStartX = 0;
-document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-document.addEventListener('touchend', e => {
-  if (currentTab !== 'flashcard') return;
-  const diff = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(diff) > 80) {
-    const fc = document.getElementById('flashcard');
-    if (fc && fc.classList.contains('revealed')) {
-      if (diff > 0) fcNext('good');
-      else fcNext('again');
-    }
-  }
+let touchStartX=0;
+document.addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX});
+document.addEventListener('touchend',e=>{
+  if(currentTab!=='flashcard')return;
+  const diff=e.changedTouches[0].clientX-touchStartX;
+  if(Math.abs(diff)>80){const fc=document.getElementById('flashcard');if(fc&&fc.classList.contains('revealed')){diff>0?fcNext('good'):fcNext('again')}}
 });
 
 init();
