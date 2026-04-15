@@ -1,0 +1,12 @@
+{
+  "name": "DUO 3.0 単語帳",
+  "short_name": "DUO 3.0",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "description": "DUO 3.0 英単語学習アプリ - フラッシュカード・クイズ・進捗管理",
+  "icons": [
+    { "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0e1a' width='100' height='100' rx='20'/><text x='50' y='55' text-anchor='middle' font-size='32' font-weight='bold' fill='%234a9eff' dy='.1em'>DUO</text><text x='50' y='78' text-anchor='middle' font-size='16' fill='%238892a8'>3.0</text></svg>", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
